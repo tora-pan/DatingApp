@@ -28,8 +28,11 @@ namespace API.Services
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
             };
+
+            // create credentials
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
+            // Describe how the token is going to "look"
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
@@ -41,6 +44,7 @@ namespace API.Services
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
+            // return the written token to whoever needs it.
             return tokenHandler.WriteToken(token);
         }
     }
