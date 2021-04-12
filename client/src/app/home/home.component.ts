@@ -26,4 +26,8 @@ export class HomeComponent implements OnInit {
     // setting the user prop in this class to the user value we get back from this response.
     this.http.get('https://localhost:5001/api/users').subscribe(users => this.users = users);
   }
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
+  }
 }
