@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,20 @@ namespace API.Entities
         public string UserName { get; set; }
         public byte[] PasswordHash { get; set;}
         public byte[] PasswordSalt { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string KnowAs { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime LastActive { get; set; } = DateTime.Now;
+        public string Gender { get; set; }
+        public string Introduction { get; set; }
+        public string LookingFor { get; set; }
+        public string City { get; set; }
+        public string Coutry { get; set; }
+        public ICollection<Photo> Photos { get; set; }  // 1 -> many relationship
+
+        public int GetAge()
+        {
+            return DateOfBirth.CalculateAge();
+        }
     }
 }
