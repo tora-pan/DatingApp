@@ -14,7 +14,7 @@ namespace API.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Coutry",
+                name: "Country",
                 table: "Users",
                 type: "TEXT",
                 nullable: true);
@@ -102,7 +102,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Coutry",
+                name: "Country",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -122,7 +122,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "KnowAs",
+                name: "KnownAs",
                 table: "Users");
 
             migrationBuilder.DropColumn(

@@ -21,12 +21,12 @@ namespace API.Entities
         public string Introduction { get; set; }
         public string LookingFor { get; set; }
         public string City { get; set; }
-        public string Coutry { get; set; }
+        public string Country { get; set; }
         public ICollection<Photo> Photos { get; set; }  // 1 -> many relationship
 
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+       // public int GetAge()
+       // {
+       //     return DateOfBirth.CalculateAge();
+       // }
     }
 }
